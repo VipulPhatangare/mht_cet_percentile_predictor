@@ -22,8 +22,12 @@ document.getElementById('percentileForm').addEventListener('submit', async funct
         // Calculate percentile (replace with your actual algorithm)
         const percentile = await calculateMHTCETPercentile(marks, date, shift);
         
-        // Display results
-        document.getElementById('percentileValue').textContent = percentile.toFixed(2);
+        if(percentile < 75 || percentile == 0){
+            document.getElementById('percentileValue').textContent = 'Percentile below 75.00';
+        }else{
+            document.getElementById('percentileValue').textContent = percentile.toFixed(2);
+        }
+        
         document.getElementById('displayMarks').textContent = marks;
         document.getElementById('displayDate').textContent = formatDate(date);
         document.getElementById('displayShift').textContent = `Shift ${shift}`;

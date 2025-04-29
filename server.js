@@ -67,7 +67,6 @@ app.get('/fetch_percentile/:marks/:date/:shift', async (req, res) => {
         }
 
         const difficulty = data[newShift];
-
         // Validate difficulty is a safe column name
         const allowedColumns = ['Easy', 'Medium', 'Hard'];
         if (!allowedColumns.includes(difficulty)) {
