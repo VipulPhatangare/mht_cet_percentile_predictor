@@ -19,34 +19,7 @@ app.get('/', (req, res) => {
     res.render('home');
 });
 
-// Fetch percentile route
-// app.get('/fetch_percentile/:marks/:date/:shift', async (req, res) => {
-//     const { marks, date, shift } = req.params;
 
-//     // Reformat date to dd-mm-yyyy
-//     const [year, month, day] = date.split("-");
-//     const formatDate = `${day}-${month}-${year}`;
-
-//     const newShift = `Shift_${shift}`;
-
-//     try {
-//         const { data, error } = await supabase
-//             .from('difficulty_of_exam')
-//             .select(`${newShift}`)
-//             .eq('Date', formatDate)
-//             .maybeSingle();
-
-//         if (error) {
-//             console.error("Supabase error:", error);
-//             return res.status(500).json({ error: 'Query failed' });
-//         }
-
-//         res.json(data);
-//     } catch (err) {
-//         console.error("Unexpected error:", err);
-//         res.status(500).json({ error: 'Unexpected error occurred' });
-//     }
-// });
 
 app.get('/fetch_percentile/:marks/:date/:shift', async (req, res) => {
     const { marks, date, shift } = req.params;
@@ -89,8 +62,8 @@ app.get('/fetch_percentile/:marks/:date/:shift', async (req, res) => {
             .filter(r => r[difficulty] < Number(marks))
             .sort((a, b) => b[difficulty] - a[difficulty])[0];
 
-        console.log("upper:", upper);
-        console.log("lower:", lower);
+        // console.log("upper:", upper);
+        // console.log("lower:", lower);
 
         // Step 4: Return response
         let Percentile = 0;
