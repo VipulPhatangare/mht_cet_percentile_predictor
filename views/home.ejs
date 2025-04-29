@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MHT CET Percentile Predictor 2025</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/home.css">
+</head>
+<body>
+    <div class="container">
+        <div class="card">
+            <div class="card-header">
+                <h1>MHT CET 2025 Percentile Predictor</h1>
+                <p>Get your estimated percentile based on your exam performance</p>
+            </div>
+            <div class="card-body">
+                <form id="percentileForm">
+                    <div class="form-group">
+                        <label for="marks" class="form-label">Your MHT CET Score (Out of 200)</label>
+                        <input type="number" id="marks" class="form-control" min="0" max="200" placeholder="Enter your marks" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="examDate" class="form-label">Exam Date</label>
+                        <select id="examDate" class="form-control" required>
+                            <option value="">-- Select Exam Date --</option>
+                            <option value="2025-04-19">19 April 2025 (Day 1)</option>
+                            <option value="2025-04-20">20 April 2025 (Day 2)</option>
+                            <option value="2025-04-21">21 April 2025 (Day 3)</option>
+                            <option value="2025-04-22">22 April 2025 (Day 4)</option>
+                            <option value="2025-04-23">23 April 2025 (Day 5)</option>
+                            <option value="2025-04-24">24 April 2025 (Day 6)</option>
+                            <option value="2025-04-25">25 April 2025 (Day 7)</option>
+                            <option value="2025-04-27">27 April 2025 (Day 8)</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="shift" class="form-label">Exam Shift</label>
+                        <select id="shift" class="form-control" required>
+                            <option value="">-- Select Exam Shift --</option>
+                            <option value="1">Shift 1 (Morning - 9 AM to 12 PM)</option>
+                            <option value="2">Shift 2 (Afternoon - 2 PM to 5 PM)</option>
+                        </select>
+                    </div>
+                    
+                    <button type="submit" class="btn">Calculate My Percentile</button>
+                </form>
+            </div>
+        </div>
+        
+        <div class="result-card" id="result">
+            <h2 class="result-title">Your Predicted MHT CET Percentile</h2>
+            <div class="percentile-value" id="percentileValue">00.00</div>
+            
+            <div class="result-details">
+                <div class="detail-item">
+                    <div class="detail-label">Your Score</div>
+                    <div class="detail-value" id="displayMarks">-</div>
+                </div>
+                <div class="detail-item">
+                    <div class="detail-label">Exam Date</div>
+                    <div class="detail-value" id="displayDate">-</div>
+                </div>
+                <div class="detail-item">
+                    <div class="detail-label">Exam Shift</div>
+                    <div class="detail-value" id="displayShift">-</div>
+                </div>
+            </div>
+            
+            <p class="info-text">
+                Note: This is a predicted percentile based on historical data and statistical analysis. 
+                Actual percentile may vary based on final exam statistics.
+            </p>
+        </div>
+    </div>
+
+    <script src="/js/home.js"></script>
+</body>
+</html>
